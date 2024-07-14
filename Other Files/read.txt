@@ -1,0 +1,30 @@
+This code creates a Market Basket Analysis Dashboard using Streamlit, a framework for building web applications for machine learning and data science projects. Here's a breakdown of the code:
+
+1. **Imports**: 
+   - `streamlit`: The Streamlit library is used to create the web application.
+   - `pandas`: Pandas is used for data manipulation.
+   - `matplotlib.pyplot`: Matplotlib is used for data visualization.
+
+2. **Data Loading**:
+   - `load_data()` function: This function is decorated with `@st.cache` to cache the data loading process. It reads data from an Excel file named "DS_Round_1_Assignment.xlsx" into a pandas DataFrame and returns it.
+
+3. **Streamlit App Layout**:
+   - `main()` function: This function defines the layout of the Streamlit web application.
+   - Title: The title of the application is set to "Market Basket Analysis Dashboard".
+   - Sidebar Filters:
+     - Users can select one of the following options to filter the data: 'sku_name', 'brand_name', 'Category', or 'Group'.
+     - After selecting the filter, users can choose a specific entity from that filter (e.g., a specific SKU, brand, category, or group).
+     - Based on the selected entity, a second level of filtering is provided for the 'sku_name'.
+   - **Filtered Data**: Displays the filtered data based on the selected options.
+   - **Output Charts**:
+     - Chart 1: Displays the percentage of baskets where the selected entity is bought alongside any other item.
+     - Chart 2: Bar charts visualizing the 'associated basket score' for 'sku_name', 'brand_name', 'Category', and 'Group'.
+
+4. **Chart Generation**:
+   - Chart 1 calculates the percentage of baskets where the selected entity is present alongside any other item.
+   - Chart 2 calculates the total spend for each unique value in the selected filter (sku_name, brand_name, Category, or Group), sorts the results in descending order, and creates a bar chart for each.
+
+5. **Execution**:
+   - The `main()` function is executed when the script is run, creating and displaying the Streamlit web application.
+
+Overall, this code creates an interactive dashboard where users can explore market basket analysis results based on different filtering options and visualize the associated basket scores for various entities.
